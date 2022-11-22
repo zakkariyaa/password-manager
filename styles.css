@@ -1,0 +1,505 @@
+/* GENERAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* HOMEPAGE */
+/* HEADER SECTION */
+header {
+  background-color: #d32d27;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+header h2 {
+  cursor: pointer;
+}
+
+header .search {
+  position: relative;
+}
+
+header .search input {
+  width: 20rem;
+  padding: 0.7rem 3rem;
+  background: #dd554a;
+  border: transparent;
+}
+
+header .search input::placeholder {
+  color: #ffffff;
+}
+
+header .search input:focus {
+  border: none;
+  outline: 1px solid #ffffff;
+}
+
+header .search span {
+  position: absolute;
+  top: 0.4rem;
+  left: 1rem;
+}
+
+header a {
+  padding: 0.6rem 2rem;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* MAIN SECTION */
+main,
+footer {
+  margin-top: 3rem;
+  padding: 0 6rem;
+}
+
+main .main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #8f979d;
+  padding-bottom: 0.5rem;
+}
+
+main .main-header .generate-password {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+main .main-header h3 {
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+main .main-body {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+main .main-body article {
+  width: 90%;
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.1);
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+
+main .main-body article:hover {
+  border: 1px solid #d32d27;
+}
+
+main .main-body article span i {
+  color: #dd554a;
+  font-size: 2rem;
+}
+
+main .main-body article h4 {
+  margin-top: 1rem;
+  color: #444444;
+}
+
+main .main-body article p {
+  color: #444444;
+}
+
+main .main-body > h3 {
+  display: block;
+  width: 50vw;
+}
+
+/* GENERATED FORM STYLES */
+main .generated-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+main .generated-form h4 {
+  margin-bottom: 1rem;
+}
+
+main .generated-form input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 40%;
+}
+
+main .generated-form input:focus {
+  border: none;
+  outline: 2.5px solid #3b49df;
+}
+
+main .generated-form .submit {
+  width: 40%;
+  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #d32d27;
+  color: #ffffff;
+}
+
+main .generated-form .submit:hover {
+  background-color: #92130d;
+}
+
+/* Expanded article styles */
+main .article-details {
+  width: 50%;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main .article-details .show-password {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+main .article-details .show-password div p {
+  font-weight: bold;
+}
+
+main .article-details .show-password button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #3b49df;
+  cursor: pointer;
+}
+
+main .article-details .bottom-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+main .article-details .bottom-buttons button {
+  width: 30%;
+  font-size: 1rem;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #3b3c88;
+  color: #ffffff;
+}
+
+main .article-details .bottom-buttons button + button {
+  background-color: #92130d;
+}
+
+/* PASSWORD GENERATOR FORM STYLES */
+main .password-generator-form {
+  margin-top: 2rem;
+  width: 70%;
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main .password-generator-form div input {
+  margin-right: 0.6rem;
+}
+
+main .password-generator-form .submit {
+  width: 40%;
+  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #d32d27;
+  color: #ffffff;
+}
+
+main .password-generator-form .submit:hover {
+  background-color: #92130d;
+}
+
+main .password-generator-form div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+main .password-generator-form div:nth-child(1) input {
+  margin-right: 0;
+  padding: 0.4rem;
+  width: 40%;
+}
+
+main .password-generator-form div:nth-child(1) input:focus {
+  border: none;
+  outline: 2.5px solid #3b49df;
+}
+
+/* generated password display styles section */
+main .password-generator-form .display-password {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+main .password-generator-form .password-span {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  width: 30%;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #f5f5f5;
+  color: #3b49df;
+  box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.1);
+}
+
+main .password-generator-form .copy-span {
+  font-size: 1.7rem;
+  margin-top: 1rem;
+  padding: 0rem 1rem;
+  background-color: #f5f5f5;
+  color: #3b49df;
+  box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.1);
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+main .password-generator-form .copy-span:hover {
+  color: #3b3c88;
+}
+
+/* FOOTER SECTION */
+footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+footer button {
+  font-size: 1.8rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: #d32d27;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 0 2px rgba(23, 23, 23, 0.1);
+}
+
+/* LOGIN & REGISTRATION SECTION */
+.login-section {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.registeration-section {
+  display: grid;
+  place-items: center;
+}
+
+.login-div,
+.registration-div {
+  width: 50%;
+  padding: 3rem;
+  background-color: #ffffff;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.1);
+}
+
+.registration-div {
+  margin: 2rem 0;
+}
+
+.login-div h2,
+.registration-div h2 {
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.login-div form,
+.registration-div form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-div form > label,
+.registration-div form > label {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.login-div form input,
+.registration-div form input {
+  padding: 0.7rem;
+  margin-bottom: 2rem;
+  margin-top: 0.4rem;
+  border-radius: 0.3rem;
+  border: 1px solid gray;
+}
+
+.login-div form > input:focus,
+.registration-div form > input:focus {
+  border: none;
+  outline: 2.5px solid #3b49df;
+}
+
+.login-div .checkbox {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
+  margin-left: -0.5rem;
+}
+
+.login-div .checkbox input {
+  width: 1.2rem;
+  height: 2rem;
+  margin-bottom: 0;
+  margin-top: -0rem;
+}
+
+.login-div .checkbox:hover {
+  width: 30%;
+  background-color: #f5f5f5;
+  border-radius: 0.5rem;
+}
+
+.login-div form button,
+.registration-div form button {
+  margin-top: 2rem;
+  padding: 0.6rem;
+  font-size: 1.1rem;
+  border-radius: 0.3rem;
+  border: 1px solid gray;
+  cursor: pointer;
+  background-color: #3b49df;
+  color: #ffffff;
+}
+
+.login-div form button:hover,
+.registration-div form button:hover {
+  background-color: #3b3c88;
+}
+
+.login-div form span,
+.registration-div form span {
+  background-color: #dd554a;
+  color: #ffffff;
+  padding: 0.4rem;
+}
+
+.registration-div form button {
+  margin-top: 1rem;
+}
+
+.login-div .links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-div .links,
+.registration-div .links {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.login-div .links a,
+.registration-div .links a {
+  text-decoration: none;
+  color: #6264e2;
+}
+
+/* MEDIA QUERIES */
+/* MOBILE PHONE */
+@media (max-width: 750px) {
+  /* HOMEPAGE */
+  header {
+    padding: 1rem;
+  }
+  header h2 {
+    display: none;
+  }
+  header .search input {
+    width: 14rem;
+  }
+  header a {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  main,
+  footer {
+    padding: 0 1rem;
+  }
+  main .main-body {
+    grid-template-columns: 1fr 1fr;
+  }
+  main .main-body article {
+    width: 100%;
+    padding: 1rem 1rem;
+  }
+
+  main .article-details {
+    width: 70%;
+  }
+  footer button {
+    font-size: 1.4rem;
+  }
+
+  main .password-generator-form {
+    width: 90%;
+  }
+  main .password-generator-form .password-span {
+    width: 50%;
+  }
+
+  /* LOGIN & REGISTARTION PAGES */
+  .login-div,
+  .registration-div {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
