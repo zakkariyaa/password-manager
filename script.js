@@ -369,22 +369,26 @@ if (location.pathname === '/index.html') {
 
   // display the form on the page
   addPasswordButton.addEventListener('click', () => {
-    // need to extract this code into function - DRY
-    const addForm = generateForm();
-    main.replaceChild(addForm, mainBody);
-    addPasswordButton.style.display = 'none';
+    if (userIsLogged()) {
+      // need to extract this code into function - DRY
+      const addForm = generateForm();
+      main.replaceChild(addForm, mainBody);
+      addPasswordButton.style.display = 'none';
 
-    const addFormElement = document.querySelector('main form');
-    addFormElement.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const addFormInputs = Array.from(event.target.children);
+      const addFormElement = document.querySelector('main form');
+      addFormElement.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const addFormInputs = Array.from(event.target.children);
 
-      const serviceName = addFormInputs[2].value;
-      const email = addFormInputs[4].value;
-      const password = addFormInputs[6].value;
+        const serviceName = addFormInputs[2].value;
+        const email = addFormInputs[4].value;
+        const password = addFormInputs[6].value;
 
-      storePassword(serviceName, email, password);
-    });
+        storePassword(serviceName, email, password);
+      });
+    } else {
+      location.assign('./login.html');
+    }
   });
 
   // generate password generating form
@@ -502,64 +506,68 @@ if (location.pathname === '/index.html') {
 
   // GENERATE PASSWORD SECTION
   generatePasswordButton.addEventListener('click', () => {
-    const form = passwordGeneratorForm();
-    main.replaceChild(form, mainBody);
-    addPasswordButton.style.display = 'none';
-    generatePasswordButton.style.display = 'none';
+    if (userIsLogged()) {
+      const form = passwordGeneratorForm();
+      main.replaceChild(form, mainBody);
+      addPasswordButton.style.display = 'none';
+      generatePasswordButton.style.display = 'none';
 
-    // select the password generator div
-    const generatorForm = document.querySelector(
-      'main .password-generator-form'
-    );
-    generatorForm.addEventListener('submit', (event) => {
-      event.preventDefault();
+      // select the password generator div
+      const generatorForm = document.querySelector(
+        'main .password-generator-form'
+      );
+      generatorForm.addEventListener('submit', (event) => {
+        event.preventDefault();
 
-      const length = event.target.children[0].children[1].value;
-      const uppercase = event.target.children[1].children[0].checked;
-      const numbers = event.target.children[2].children[0].checked;
-      const symbols = event.target.children[3].children[0].checked;
+        const length = event.target.children[0].children[1].value;
+        const uppercase = event.target.children[1].children[0].checked;
+        const numbers = event.target.children[2].children[0].checked;
+        const symbols = event.target.children[3].children[0].checked;
 
-      const password = generatePassword(length, uppercase, numbers, symbols);
+        const password = generatePassword(length, uppercase, numbers, symbols);
 
-      // a div to display the generated pass on the page
-      // with copy to clipboard functionality
-      const oldDiv = document.querySelector('form .display-password');
+        // a div to display the generated pass on the page
+        // with copy to clipboard functionality
+        const oldDiv = document.querySelector('form .display-password');
 
-      const displayPasswordDiv = document.createElement('div');
-      displayPasswordDiv.className = 'display-password';
-      const passwordSpan = document.createElement('span');
-      passwordSpan.className = 'password-span';
-      const copySpan = document.createElement('span');
-      copySpan.className = 'copy-span';
-      copySpan.innerHTML = '<i class="uil uil-copy"></i>';
+        const displayPasswordDiv = document.createElement('div');
+        displayPasswordDiv.className = 'display-password';
+        const passwordSpan = document.createElement('span');
+        passwordSpan.className = 'password-span';
+        const copySpan = document.createElement('span');
+        copySpan.className = 'copy-span';
+        copySpan.innerHTML = '<i class="uil uil-copy"></i>';
 
-      displayPasswordDiv.append(passwordSpan);
-      displayPasswordDiv.append(copySpan);
+        displayPasswordDiv.append(passwordSpan);
+        displayPasswordDiv.append(copySpan);
 
-      // delay the value showing on the page for 3 seconds
-      for (let i = 1; i <= 3; i++) {
-        setTimeout(() => {
-          passwordSpan.textContent = password;
-        }, i * 1000);
-      }
+        // delay the value showing on the page for 3 seconds
+        for (let i = 1; i <= 3; i++) {
+          setTimeout(() => {
+            passwordSpan.textContent = password;
+          }, i * 1000);
+        }
 
-      if (oldDiv) {
-        form.replaceChild(displayPasswordDiv, oldDiv);
-      } else {
-        form.insertBefore(
-          displayPasswordDiv,
-          document.querySelector('form .submit')
-        );
-      }
+        if (oldDiv) {
+          form.replaceChild(displayPasswordDiv, oldDiv);
+        } else {
+          form.insertBefore(
+            displayPasswordDiv,
+            document.querySelector('form .submit')
+          );
+        }
 
-      // copy text to clipboard
-      const copyButton = document.querySelector('form .copy-span');
-      const inputField = document.querySelector('form .password-span');
+        // copy text to clipboard
+        const copyButton = document.querySelector('form .copy-span');
+        const inputField = document.querySelector('form .password-span');
 
-      copyButton.addEventListener('click', () => {
-        navigator.clipboard.writeText(inputField.textContent);
+        copyButton.addEventListener('click', () => {
+          navigator.clipboard.writeText(inputField.textContent);
+        });
       });
-    });
+    } else {
+      location.assign('./login.html');
+    }
   });
 
   // SEARCH PASSWORD SECTION
