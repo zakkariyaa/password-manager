@@ -9,85 +9,84 @@
 // ];
 
 // General functions
-// const updateLocalStorage = (feild, value) => {
-//   const user = JSON.parse(localStorage.getItem('user'));
-//   user[feild] = value;
-//   localStorage.removeItem('user');
-//   localStorage.setItem('user', JSON.stringify(user));
-//   location.reload();
-// };
+const updateLocalStorage = (feild, value) => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  user[feild] = value;
+  localStorage.removeItem('user');
+  localStorage.setItem('user', JSON.stringify(user));
+  location.reload();
+};
 
-// const displayError = (button, errorText, className = false) => {
-//   const oldSpan = document.querySelector('form span');
-//   if (oldSpan) {
-//     null;
-//   } else {
-//     const span = document.createElement('span');
-//     span.textContent = errorText;
-//     span.className = className;
-//     button.parentElement.insertBefore(span, button);
-//   }
-// };
+const displayError = (button, errorText, className = false) => {
+  const oldSpan = document.querySelector('form span');
+  if (oldSpan) {
+    null;
+  } else {
+    const span = document.createElement('span');
+    span.textContent = errorText;
+    span.className = className;
+    button.parentElement.insertBefore(span, button);
+  }
+};
 
-// ************************************************
+************************************************
 // Register specific code
-// if (location.pathname === './register.html') {
-//   const submitButton = document.querySelector('.signup');
-//   const registartionform = document.querySelector('form');
+if (location.pathname === '/password-manager/register.html') {
+  const submitButton = document.querySelector('.signup');
+  const registartionform = document.querySelector('form');
 
-//   registartionform.addEventListener('submit', (event) => {
-//     event.preventDefault();
-//     const formElements = Array.from(event.target.children);
-//     const inputs = formElements.filter((el, idx) => idx % 2 !== 0).slice(0, -1);
+  registartionform.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formElements = Array.from(event.target.children);
+    const inputs = formElements.filter((el, idx) => idx % 2 !== 0).slice(0, -1);
 
-//     const firstName = inputs[0].value;
-//     const lastName = inputs[1].value;
-//     const username = inputs[2].value;
-//     const password = inputs[3].value;
-//     const confirmPassword = inputs[4].value;
+    const firstName = inputs[0].value;
+    const lastName = inputs[1].value;
+    const username = inputs[2].value;
+    const password = inputs[3].value;
+    const confirmPassword = inputs[4].value;
 
-//     const passwordsMatch = password === confirmPassword;
-//     if (passwordsMatch) {
-//       const user = {
-//         firstName,
-//         lastName,
-//         username,
-//         password,
-//         logged: true,
-//       };
-//       localStorage.setItem('user', JSON.stringify(user));
-//       location.reload();
-//     } else {
-//       displayError(submitButton, 'Passwords must match', 'wrong-password');
-//     }
-//   });
-//   console.log('cool again')
-// }
+    const passwordsMatch = password === confirmPassword;
+    if (passwordsMatch) {
+      const user = {
+        firstName,
+        lastName,
+        username,
+        password,
+        logged: true,
+      };
+      localStorage.setItem('user', JSON.stringify(user));
+      location.reload();
+    } else {
+      displayError(submitButton, 'Passwords must match', 'wrong-password');
+    }
+  });
+}
 
 // // ************************************************
-// // Login specific code
-// if (location.pathname === '/login.html') {
-//   const loginForm = document.querySelector('.login-form');
-//   const loginButton = document.querySelector('.login-button');
+// Login specific code
+if (location.pathname === '/password-manager/login.html') {
+  const loginForm = document.querySelector('.login-form');
+  const loginButton = document.querySelector('.login-button');
 
-//   loginForm.addEventListener('submit', (event) => {
-//     event.preventDefault();
-//     const formElements = Array.from(event.target.children);
-//     const userName = formElements[1].value;
-//     const password = formElements[3].value;
+  loginForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formElements = Array.from(event.target.children);
+    const userName = formElements[1].value;
+    const password = formElements[3].value;
 
-//     const user = JSON.parse(localStorage.getItem('user'));
-//     if (user) {
-//       if (user.username === userName && user.password === password) {
-//         updateLocalStorage('logged', true);
-//       } else {
-//         displayError(loginButton, 'Incorrect credentials');
-//       }
-//     } else {
-//       displayError(loginButton, 'User does not exist');
-//     }
-//   });
-// }
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+      if (user.username === userName && user.password === password) {
+        updateLocalStorage('logged', true);
+      } else {
+        displayError(loginButton, 'Incorrect credentials');
+      }
+    } else {
+      displayError(loginButton, 'User does not exist');
+    }
+  });
+}
 
 // // ************************************************
 // // Homepage specific code
@@ -603,5 +602,5 @@
 //   });
 // }
 
-console.log('hello')
-console.log(window.location.pathname);
+// console.log('hello')
+// console.log(window.location.pathname);
