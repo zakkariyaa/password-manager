@@ -17,4 +17,5 @@ const user = JSON.parse(localStorage.getItem('user'));
 // } else {
 //   null;
 // }
+console.log('cool')
 console.log(user)
