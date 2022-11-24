@@ -32,35 +32,36 @@ const displayError = (button, errorText, className = false) => {
 // ************************************************
 // Register specific code
 if (location.pathname === '/register.html') {
-  const submitButton = document.querySelector('.signup');
-  const registartionform = document.querySelector('form');
+//   const submitButton = document.querySelector('.signup');
+//   const registartionform = document.querySelector('form');
 
-  registartionform.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const formElements = Array.from(event.target.children);
-    const inputs = formElements.filter((el, idx) => idx % 2 !== 0).slice(0, -1);
+//   registartionform.addEventListener('submit', (event) => {
+//     event.preventDefault();
+//     const formElements = Array.from(event.target.children);
+//     const inputs = formElements.filter((el, idx) => idx % 2 !== 0).slice(0, -1);
 
-    const firstName = inputs[0].value;
-    const lastName = inputs[1].value;
-    const username = inputs[2].value;
-    const password = inputs[3].value;
-    const confirmPassword = inputs[4].value;
+//     const firstName = inputs[0].value;
+//     const lastName = inputs[1].value;
+//     const username = inputs[2].value;
+//     const password = inputs[3].value;
+//     const confirmPassword = inputs[4].value;
 
-    const passwordsMatch = password === confirmPassword;
-    if (passwordsMatch) {
-      const user = {
-        firstName,
-        lastName,
-        username,
-        password,
-        logged: true,
-      };
-      localStorage.setItem('user', JSON.stringify(user));
-      location.reload();
-    } else {
-      displayError(submitButton, 'Passwords must match', 'wrong-password');
-    }
-  });
+//     const passwordsMatch = password === confirmPassword;
+//     if (passwordsMatch) {
+//       const user = {
+//         firstName,
+//         lastName,
+//         username,
+//         password,
+//         logged: true,
+//       };
+//       localStorage.setItem('user', JSON.stringify(user));
+//       location.reload();
+//     } else {
+//       displayError(submitButton, 'Passwords must match', 'wrong-password');
+//     }
+//   });
+  console.log('hello world')
 }
 
 // ************************************************
