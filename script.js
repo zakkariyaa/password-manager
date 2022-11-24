@@ -8,30 +8,30 @@
 //   '<i class="uil uil-keyhole-circle"></i>',
 // ];
 
-// // General functions
-// const updateLocalStorage = (feild, value) => {
-//   const user = JSON.parse(localStorage.getItem('user'));
-//   user[feild] = value;
-//   localStorage.removeItem('user');
-//   localStorage.setItem('user', JSON.stringify(user));
-//   location.reload();
-// };
+// General functions
+const updateLocalStorage = (feild, value) => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  user[feild] = value;
+  localStorage.removeItem('user');
+  localStorage.setItem('user', JSON.stringify(user));
+  location.reload();
+};
 
-// const displayError = (button, errorText, className = false) => {
-//   const oldSpan = document.querySelector('form span');
-//   if (oldSpan) {
-//     null;
-//   } else {
-//     const span = document.createElement('span');
-//     span.textContent = errorText;
-//     span.className = className;
-//     button.parentElement.insertBefore(span, button);
-//   }
-// };
+const displayError = (button, errorText, className = false) => {
+  const oldSpan = document.querySelector('form span');
+  if (oldSpan) {
+    null;
+  } else {
+    const span = document.createElement('span');
+    span.textContent = errorText;
+    span.className = className;
+    button.parentElement.insertBefore(span, button);
+  }
+};
 
-// // ************************************************
-// // Register specific code
-// if (location.pathname === '/register.html') {
+// ************************************************
+// Register specific code
+if (location.pathname === '/register.html') {
 //   const submitButton = document.querySelector('.signup');
 //   const registartionform = document.querySelector('form');
 
@@ -61,7 +61,8 @@
 //       displayError(submitButton, 'Passwords must match', 'wrong-password');
 //     }
 //   });
-// }
+  console.log('cool again')
+}
 
 // // ************************************************
 // // Login specific code
@@ -602,4 +603,4 @@
 //   });
 // }
 
-console.log('hello cool');
+// console.log('hello cool');
