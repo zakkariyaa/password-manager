@@ -31,7 +31,7 @@ const displayError = (button, errorText, className = false) => {
 
 // ************************************************
 // Register specific code
-if (location.pathname === '/register.html') {
+if (location.pathname === './register.html') {
 //   const submitButton = document.querySelector('.signup');
 //   const registartionform = document.querySelector('form');
 
