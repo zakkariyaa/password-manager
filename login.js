@@ -2,16 +2,16 @@ const user = JSON.parse(localStorage.getItem('user'));
 
 if (user) {
   if (user.logged) {
-    if (window.location.pathname === './index.html') {
+    if (window.location.pathname === '/password-manager/index.html') {
       null;
     } else {
-      window.location.assign('./index.html');
+      window.location.assign('/password-manager/index.html');
     }
   } else {
-    if (window.location.pathname === './login.html') {
+    if (window.location.pathname === '/password-manager/login.html') {
       null;
     } else {
-      window.location.assign('./login.html');
+      window.location.assign('/password-manager/login.html');
     }
   }
 } else {
