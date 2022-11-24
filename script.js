@@ -9,29 +9,29 @@
 // ];
 
 // General functions
-const updateLocalStorage = (feild, value) => {
-  const user = JSON.parse(localStorage.getItem('user'));
-  user[feild] = value;
-  localStorage.removeItem('user');
-  localStorage.setItem('user', JSON.stringify(user));
-  location.reload();
-};
+// const updateLocalStorage = (feild, value) => {
+//   const user = JSON.parse(localStorage.getItem('user'));
+//   user[feild] = value;
+//   localStorage.removeItem('user');
+//   localStorage.setItem('user', JSON.stringify(user));
+//   location.reload();
+// };
 
-const displayError = (button, errorText, className = false) => {
-  const oldSpan = document.querySelector('form span');
-  if (oldSpan) {
-    null;
-  } else {
-    const span = document.createElement('span');
-    span.textContent = errorText;
-    span.className = className;
-    button.parentElement.insertBefore(span, button);
-  }
-};
+// const displayError = (button, errorText, className = false) => {
+//   const oldSpan = document.querySelector('form span');
+//   if (oldSpan) {
+//     null;
+//   } else {
+//     const span = document.createElement('span');
+//     span.textContent = errorText;
+//     span.className = className;
+//     button.parentElement.insertBefore(span, button);
+//   }
+// };
 
 // ************************************************
 // Register specific code
-if (location.pathname === './register.html') {
+// if (location.pathname === './register.html') {
 //   const submitButton = document.querySelector('.signup');
 //   const registartionform = document.querySelector('form');
 
@@ -61,8 +61,8 @@ if (location.pathname === './register.html') {
 //       displayError(submitButton, 'Passwords must match', 'wrong-password');
 //     }
 //   });
-  console.log('cool again')
-}
+//   console.log('cool again')
+// }
 
 // // ************************************************
 // // Login specific code
@@ -603,4 +603,5 @@ if (location.pathname === './register.html') {
 //   });
 // }
 
-// console.log('hello cool');
+console.log('hello')
+console.log(window.location.pathname);
