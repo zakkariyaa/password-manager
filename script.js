@@ -63,6 +63,7 @@ if (location.pathname === '/register.html') {
 //   });
   console.log('hello world')
 }
+console.log(location.pathname)
 
 // ************************************************
 // Login specific code
