@@ -29,7 +29,7 @@ const displayError = (button, errorText, className = false) => {
   }
 };
 
-************************************************
+// ************************************************
 // Register specific code
 if (location.pathname === '/password-manager/register.html') {
   const submitButton = document.querySelector('.signup');
@@ -63,7 +63,7 @@ if (location.pathname === '/password-manager/register.html') {
   });
 }
 
-// // ************************************************
+// ************************************************
 // Login specific code
 if (location.pathname === '/password-manager/login.html') {
   const loginForm = document.querySelector('.login-form');
