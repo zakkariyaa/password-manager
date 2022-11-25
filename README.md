@@ -1,5 +1,6 @@
 # Password Manager
 A fully functional password manager + plus password generator. Built with HTML/CSS/Javascript.<br />
+This project was built as part of FAC's application process <br />
 <br />
 ![Webpage screenshot](https://github.com/zakkariyaa/website/blob/master/images/project7.png)
 <br />
