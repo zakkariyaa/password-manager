@@ -97,10 +97,10 @@ if (location.pathname === '/password-manager/forget-password.html') {
   forgetPasswordForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const inputUsername = event.target.children[0].value;
-    const storedUsername = JSON.parse(localStorage.getItem('user'))['username'];
+    const storedUsername = JSON.parse(localStorage.getItem('user'));
 
     if (storedUsername) {
-      if (storedUsername === inputUsername) {
+      if (storedUsername['username'] === inputUsername) {
         const password = JSON.parse(localStorage.getItem('user'))['password'];
         displayInfo(
           submitButton,
