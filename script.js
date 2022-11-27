@@ -99,25 +99,33 @@ if (location.pathname === '/password-manager/forget-password.html') {
     const inputUsername = event.target.children[0].value;
     const storedUsername = JSON.parse(localStorage.getItem('user'))['username'];
 
-    if (storedUsername === inputUsername) {
-      const password = JSON.parse(localStorage.getItem('user'))['password'];
-      displayInfo(
-        submitButton,
-        `password: ${password}`,
-        'forget-password-found'
-      );
-      // if password is correct, change button so user can login
-      submitButton.textContent = 'Login';
-      submitButton.addEventListener('click', () => {
-        location.assign('./login.html');
-      });
+    if (storedUsername) {
+      if (storedUsername === inputUsername) {
+        const password = JSON.parse(localStorage.getItem('user'))['password'];
+        displayInfo(
+          submitButton,
+          `password: ${password}`,
+          'forget-password-found'
+        );
+        // if password is correct, change button so user can login
+        submitButton.textContent = 'Login';
+        submitButton.addEventListener('click', () => {
+          location.assign('./login.html');
+        });
+      } else {
+        displayInfo(
+          submitButton,
+          'No such user found!',
+          'forget-password-notFound'
+        );
+        submitButton.textContent = 'Submit';
+      }
     } else {
       displayInfo(
         submitButton,
         'No such user found!',
         'forget-password-notFound'
       );
-      submitButton.textContent = 'Submit';
     }
   });
 }
