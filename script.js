@@ -91,7 +91,7 @@ if (location.pathname === '/password-manager/login.html') {
 
 // ************************************************
 // Forgot password specific code
-if (location.pathname === '/forget-password.html') {
+if (location.pathname === '/password-manager/forget-password.html') {
   const submitButton = document.querySelector('.forget-password-button');
   const forgetPasswordForm = document.querySelector('.forget-password-form');
   forgetPasswordForm.addEventListener('submit', (event) => {
