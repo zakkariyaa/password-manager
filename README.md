@@ -27,5 +27,5 @@ or generate totally new passwords.<br /><br />
 4- Deleting<br />
 <br />
 ![Webpage screenshot](https://github.com/zakkariyaa/website/blob/master/images/edit-delete.png)<br/><br />
-5- Generating customizable secure passwords<br /><br />
+5- Generating customizable passwords<br /><br />
 ![Webpage screenshot](https://github.com/zakkariyaa/website/blob/master/images/generate.png)
