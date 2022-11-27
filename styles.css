@@ -325,7 +325,7 @@ footer button {
   box-shadow: 0 0 0 2px rgba(23, 23, 23, 0.1);
 }
 
-/* LOGIN & REGISTRATION SECTION */
+/* LOGIN, REGISTRATION, & FORGOT PASSWORD SECTION */
 .login-section {
   width: 100%;
   height: 100vh;
@@ -333,13 +333,19 @@ footer button {
   place-items: center;
 }
 
-.registeration-section {
+.registeration-section,
+.forget-password-section {
   display: grid;
   place-items: center;
 }
 
+.forget-password-section {
+  margin: 3rem 0;
+}
+
 .login-div,
-.registration-div {
+.registration-div,
+.forget-password-div {
   width: 50%;
   padding: 3rem;
   background-color: #ffffff;
@@ -352,13 +358,15 @@ footer button {
 }
 
 .login-div h2,
-.registration-div h2 {
+.registration-div h2,
+.forget-password-div h2 {
   text-align: center;
   letter-spacing: 3px;
 }
 
 .login-div form,
-.registration-div form {
+.registration-div form,
+.forget-password-div form {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
@@ -372,7 +380,8 @@ footer button {
 }
 
 .login-div form input,
-.registration-div form input {
+.registration-div form input,
+.forget-password-div input {
   padding: 0.7rem;
   margin-bottom: 2rem;
   margin-top: 0.4rem;
@@ -381,7 +390,8 @@ footer button {
 }
 
 .login-div form > input:focus,
-.registration-div form > input:focus {
+.registration-div form > input:focus,
+.forget-password-div input:focus {
   border: none;
   outline: 2.5px solid #3b49df;
 }
@@ -408,7 +418,8 @@ footer button {
 }
 
 .login-div form button,
-.registration-div form button {
+.registration-div form button,
+.forget-password-div form button {
   margin-top: 2rem;
   padding: 0.6rem;
   font-size: 1.1rem;
@@ -419,16 +430,34 @@ footer button {
   color: #ffffff;
 }
 
+.forget-password-div form button {
+  margin-top: 0;
+}
+
 .login-div form button:hover,
-.registration-div form button:hover {
+.registration-div form button:hover,
+.forget-password-div form button:hover {
   background-color: #3b3c88;
 }
 
 .login-div form span,
-.registration-div form span {
+.registration-div form span,
+.forget-password-div form span {
   background-color: #dd554a;
   color: #ffffff;
   padding: 0.4rem;
+}
+
+.forget-password-div form span {
+  margin-bottom: 1rem;
+}
+
+.forget-password-div .forget-password-found {
+  background-color: #06d6a0;
+}
+
+.forget-password-div .forget-password-notFound {
+  background-color: #dd554a;
 }
 
 .registration-div form button {
@@ -496,9 +525,10 @@ footer button {
     width: 50%;
   }
 
-  /* LOGIN & REGISTARTION PAGES */
+  /* LOGIN, REGISTARTION, & FORGOT PASSWORD PAGES */
   .login-div,
-  .registration-div {
+  .registration-div,
+  .forget-password-div {
     width: 90%;
     padding: 1.5rem;
   }

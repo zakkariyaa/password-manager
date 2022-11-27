@@ -17,13 +17,14 @@ const updateLocalStorage = (feild, value) => {
   location.reload();
 };
 
-const displayError = (button, errorText, className = false) => {
+const displayInfo = (button, infoText, className = false) => {
   const oldSpan = document.querySelector('form span');
   if (oldSpan) {
-    null;
+    oldSpan.textContent = infoText;
+    oldSpan.className = className;
   } else {
     const span = document.createElement('span');
-    span.textContent = errorText;
+    span.textContent = infoText;
     span.className = className;
     button.parentElement.insertBefore(span, button);
   }
@@ -58,7 +59,7 @@ if (location.pathname === '/register.html') {
       localStorage.setItem('user', JSON.stringify(user));
       location.reload();
     } else {
-      displayError(submitButton, 'Passwords must match', 'wrong-password');
+      displayInfo(submitButton, 'Passwords must match', 'wrong-password');
     }
   });
 }
@@ -80,10 +81,43 @@ if (location.pathname === '/login.html') {
       if (user.username === userName && user.password === password) {
         updateLocalStorage('logged', true);
       } else {
-        displayError(loginButton, 'Incorrect credentials');
+        displayInfo(loginButton, 'Incorrect credentials');
       }
     } else {
-      displayError(loginButton, 'User does not exist');
+      displayInfo(loginButton, 'User does not exist');
+    }
+  });
+}
+
+// ************************************************
+// Forgot password specific code
+if (location.pathname === '/forget-password.html') {
+  const submitButton = document.querySelector('.forget-password-button');
+  const forgetPasswordForm = document.querySelector('.forget-password-form');
+  forgetPasswordForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const inputUsername = event.target.children[0].value;
+    const storedUsername = JSON.parse(localStorage.getItem('user'))['username'];
+
+    if (storedUsername === inputUsername) {
+      const password = JSON.parse(localStorage.getItem('user'))['password'];
+      displayInfo(
+        submitButton,
+        `password: ${password}`,
+        'forget-password-found'
+      );
+      // if password is correct, change button so user can login
+      submitButton.textContent = 'Login';
+      submitButton.addEventListener('click', () => {
+        location.assign('./login.html');
+      });
+    } else {
+      displayInfo(
+        submitButton,
+        'No such user found!',
+        'forget-password-notFound'
+      );
+      submitButton.textContent = 'Submit';
     }
   });
 }
