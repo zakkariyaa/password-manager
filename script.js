@@ -32,7 +32,7 @@ const displayInfo = (button, infoText, className = false) => {
 
 // ************************************************
 // Register specific code
-if (location.pathname === '/register.html') {
+if (location.pathname === '/password-manager/register.html') {
   const submitButton = document.querySelector('.signup');
   const registartionform = document.querySelector('form');
 
@@ -66,7 +66,7 @@ if (location.pathname === '/register.html') {
 
 // ************************************************
 // Login specific code
-if (location.pathname === '/login.html') {
+if (location.pathname === '/password-manager/login.html') {
   const loginForm = document.querySelector('.login-form');
   const loginButton = document.querySelector('.login-button');
 
@@ -124,7 +124,7 @@ if (location.pathname === '/forget-password.html') {
 
 // ************************************************
 // Homepage specific code
-if (location.pathname === '/index.html') {
+if (location.pathname === '/password-manager/index.html') {
   // create passwords object and store it in the localStorage
   if (JSON.parse(localStorage.getItem('passwords'))) {
     null;
@@ -135,10 +135,10 @@ if (location.pathname === '/index.html') {
 
   // go to homepage when logo or passwords is clicked
   document.querySelector('header > h2').addEventListener('click', () => {
-    location.assign('./index.html');
+    location.assign('/password-manager/index.html');
   });
   document.querySelector('.main-header > h3').addEventListener('click', () => {
-    location.assign('./index.html');
+    location.assign('/password-manager/index.html');
   });
 
   // check if user is logged in
@@ -421,7 +421,7 @@ if (location.pathname === '/index.html') {
         storePassword(serviceName, email, password);
       });
     } else {
-      location.assign('./login.html');
+      location.assign('/password-manager/login.html');
     }
   });
 
@@ -600,7 +600,7 @@ if (location.pathname === '/index.html') {
         });
       });
     } else {
-      location.assign('./login.html');
+      location.assign('/password-manager/login.html');
     }
   });
 
@@ -635,3 +635,6 @@ if (location.pathname === '/index.html') {
     }
   });
 }
+
+// console.log('hello')
+// console.log(window.location.pathname);
